@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Domigadget | Tech Advice for the Knowledgeable Neighbor</title>
+<link href="../../dist/output.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .ad-zone {
+            background-color: #f1f5f9;
+            border: 1px dashed #cbd5e1;
+            position: relative;
+        }
+        .ad-zone::before {
+            content: "ADVERTISEMENT";
+            position: absolute;
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            font-weight: 700;
+            color: #94a3b8;
+            letter-spacing: 0.1em;
+        }
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant shadow-sm h-20">
+<div class="flex items-center justify-between px-gutter max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-stack-md">
+<img alt="Domigadget Logo" class="h-10 w-auto" src="data:image/png;base64,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"/>
+<span class="font-display-lg text-display-lg font-extrabold text-primary hidden sm:block">Domigadget</span>
+</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="text-secondary border-b-2 border-secondary pb-1 font-headline-sm text-headline-sm" href="#">Gadgets</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-sm text-headline-sm" href="#">Guides</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-sm text-headline-sm" href="#">Reviews</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-sm text-headline-sm" href="#">Deals</a>
+</nav>
+<div class="flex items-center gap-stack-md">
+<div class="hidden lg:flex items-center bg-surface-container-low px-stack-md py-2 rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-48" placeholder="Search tech guides..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-stack-lg py-2 rounded-full font-bold hover:bg-primary-container transition-all cursor-pointer active:opacity-80">
+                    Subscribe
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-stack-md">
+<!-- Leaderboard Ad Zone -->
+<div class="ad-zone w-full h-[90px] mb-stack-lg flex items-center justify-center rounded-lg overflow-hidden">
+<span class="text-outline text-label-caps">Leaderboard Banner (728x90)</span>
+</div>
+<div class="lg:grid lg:grid-cols-[1fr_300px] gap-gutter">
+<!-- Content Column -->
+<div class="space-y-section-gap">
+<!-- Hero Section: Featured Article -->
+<section class="relative rounded-xl overflow-hidden shadow-sm border border-outline-variant bg-surface-container-lowest">
+<div class="flex flex-col md:grid md:grid-cols-2">
+<div class="h-64 md:h-auto bg-cover bg-center" data-alt="A bright, sunlit modern living room with integrated smart home devices like a minimalist smart speaker on a wooden table, automated blinds partially closed, and a clean digital thermostat on a white wall. The style is high-key with soft natural lighting, a crisp light-mode aesthetic using primary blue accents, and professional architectural photography vibes." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5vs_Le9Z8r_z_nl7iK5Vm_ybfEMtys8II5JldIGjb8wic84aeLiBq3P5Wcu2JUk-o26hIaX9PUpKbm-s363bzL67w-_EPVsV0_FGhxiVIWyrATHe1VY3GWsKCEDey4XPwPpc2xXMeuaZOo_5AAPfDSUWTi3sm1JPx5ua9T3zvqxxva8nhRKZJM0ZrqawG4YJQEX4u5leLSarvjSBBiPbxopupDySnxZbWLwpK2b-2xt6xS7ItfGv-7eVNYvdndB-o0Dkx_-aFpaQI')"></div>
+<div class="p-stack-lg flex flex-col justify-center bg-primary text-on-primary">
+<span class="font-label-caps text-label-caps bg-on-primary/20 self-start px-2 py-1 rounded mb-stack-md">FEATURED GUIDE</span>
+<h1 class="font-display-lg text-display-lg mb-stack-md leading-tight">The best gadgets to automate your home without being an expert</h1>
+<p class="font-body-lg text-body-lg mb-stack-lg opacity-90">Start your smart home journey today with zero frustration. We've picked the 5 easiest devices to set up in under 10 minutes.</p>
+<button class="bg-on-primary text-primary px-stack-lg py-3 rounded-lg font-bold w-fit hover:bg-primary-fixed transition-colors">
+                                Read the Full Guide
+                            </button>
+</div>
+</div>
+</section>
+<!-- Article Grid -->
+<section>
+<div class="flex items-center justify-between mb-stack-lg border-b border-outline-variant pb-2">
+<h2 class="font-headline-md text-headline-md text-primary">Latest From Our Neighbors</h2>
+<a class="text-secondary font-bold hover:underline" href="#">View All Articles</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<!-- Card 1 -->
+<article class="article-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden transition-all duration-300">
+<img class="w-full h-48 object-cover" data-alt="Close up of a modern, sleek smartwatch on a resting wrist, showing a calming sleep tracking interface with soft purple and blue graphs. The background is a cozy, dimly lit bedroom with soft textures and a warm, peaceful atmosphere, maintaining a professional and clean tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrHyE2Fxek0zG2WMchLFWHkFS3A1oAm4OKxojiEsfyoUM5-2HzkDFs2q20V4ekGB-66s1nT7WIvW63H7J-ThxtJEIO7HJ6LtWJsUt9qRMrTw6sx4xBJWYE1cOUx8DwAL4WrPFZwTIRWaQHukoC8qrrvCHe8LhsH6HObEJFSAvVcVnxSnfXki6ABqYDhWYElVHDN5XUHDsgVHe8ESICQ1XeepA7LWz3b_ZmrL6F-LUJq_e7m7CFBdd2XGPHblntkuFzMA46PcWYOQMl"/>
+<div class="p-stack-md">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-2 block">Wellness</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-primary">Smartwatches that actually help you sleep</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Beyond step counting, these three watches provide actionable advice for a better night's rest without the jargon.</p>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="article-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden transition-all duration-300">
+<img class="w-full h-48 object-cover" data-alt="A clean, minimalist kitchen counter featuring high-end smart appliances like a sleek digital air fryer and a compact precision cooker. Soft morning light hits the white marble surface, creating a welcoming and practical domestic scene with Navy Blue color accents in the accessories." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsi7xx3aKL89hgRn89hDZ13Vtg4uTGMRW8p0k2Lcl9Uhfq5zTai475A5nawuKi5nnfQSQFv8RH4tnGXlBPkNy00ti1K91IwJeJBfM1yTNGllcH0_jYs3t38wEFfjkiih3lH-uPP0l2XU_f83ETxoeC2EI7izfI_kN7xO4dmvx8pq4OJHoQiLd5o4tXpSXM-ui5tB45PwGlH373Jl49PzF73-HRytElwbqGQWvTbo8iZ3ZPugsYDS_61e3ojGdXXHemiZgtdg-yBthP"/>
+<div class="p-stack-md">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-2 block">Home &amp; Kitchen</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-primary">Kitchen gadgets you'll actually use</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Stop filling your cabinets with junk. These smart kitchen essentials are worth every inch of counter space.</p>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="article-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden transition-all duration-300">
+<img class="w-full h-48 object-cover" data-alt="A modern Wi-Fi router with glowing blue status lights sitting on a minimalist shelf. In the background, a person is happily using a laptop in a bright, airy home office. The lighting is crisp and modern, emphasizing connectivity and ease of use in a professional corporate-humanist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcjGoUPoT7XT17Ru4MYm5j7WwG6Q2wWq9RJoprtfA10i6m4bMagAOgRYMt8NRN5hZmzkAfwgjAH4kQ0Vcw1RhV7ih_EC3M-Fggb1hL1K9fmzetWhEGtNnn4POtcDYRFE624efqXZ1HflullB_mwELY3JwwfU76skJk-19z9L7K54lmg_5L3w_NvzKjk7fen6oc1XHby61j16NROxbR4vNIGy_kqHjLMyn1QAcFR8W8YWwQh3-oRDmwaWeq1-L8bBAQGQRagHj_CiZs"/>
+<div class="p-stack-md">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-2 block">How-To Guide</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-primary">Why your Wi-Fi is slow and how to fix it</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">You don't need to be an engineer to get better speeds. Try these three simple placement tricks first.</p>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="article-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden transition-all duration-300">
+<img class="w-full h-48 object-cover" data-alt="A pair of high-quality noise-canceling headphones resting on a clean wooden desk next to a tablet and a coffee mug. The setting is a quiet home library or study, with soft, focused lighting that highlights the premium build materials and minimalist design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWU2L9t5X0lhoIkK1_mVBf8cmJtxwyjq_TtzVtWgTsl4jZRs3-3ylWWer_hjuduvhWpXhDKNIR8keTrscm_g5EhgGVfEbOq81f5-dmUmy601QK8pr0raXhfTSrsQxnAuTDyghlTRiI1NGhwQatqnn44DYKvodvSbWHVgBZkWr6L4604vR5aItEoP-H7X0N7JDew4etAqiAVs6R7Je5v3DtGwed_rI8LPdLApbmMJbYtdhIUKxQmOhp3Ir98ighs-xOXXK6odhVXySZ"/>
+<div class="p-stack-md">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-2 block">Audio</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-primary">Budget audio that sounds like a million bucks</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">We tested 15 different pairs of headphones under $100 to find the ones that truly deliver professional sound.</p>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="article-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden transition-all duration-300">
+<img class="w-full h-48 object-cover" data-alt="A close-up of a high-resolution tablet screen being used by a senior person to video call family. The interface is simple and intuitive, with large buttons and clear icons. The surrounding lighting is warm and inviting, emphasizing the human side of technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2f12QF5VK3GkhQGqrGGD1S67C34-_-oUQdmrihWd0OxeCJ5JwFwBaW3mP3iuU2oe-ZHM4BQDDcBOPKA1wklGc9WejYaTVKadv2AwsbdGg3OVQQXcCtwiqFASprPkhtxjVspeA3hXlzzSdbmoTFg51bVl_Jvu7MI5E3qkj-UqJxy4ubo-uo4vB7z4kQcPyUgvLXC4EOQb7_ilKUb4Wy_2Lzb14beI_WdwfIul3lcXOtoykmcxGyNbtgzCeEj3m9tN7qppRheTAbgIq"/>
+<div class="p-stack-md">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-2 block">Lifestyle</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-primary">The best tablets for staying connected</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Whether it's for video calls or reading the news, these tablets offer the smootest experience for everyone.</p>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="article-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden transition-all duration-300">
+<img class="w-full h-48 object-cover" data-alt="An ergonomic home office setup with a height-adjustable desk, a comfortable chair, and soft ambient LED lighting behind the monitor. The room is organized and clutter-free, showcasing a professional yet comfortable remote work environment in a modern light-mode palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9nNYrB4wFYuQzbrWO-fgmXpxVExOUijIFY4fRkf9jFHZdCdK4TDm8BUyUwjPNooj33_QD0OekpklSzJYancIsn9nTqCWtAypGDpjbwkS73C_BvjTCvimgSiFgHNqGwGBoMzvl14jnFKJecC7w26oYc-PclOu9rImW8_jIdFVhStZWbVVD-P-QA2npxbbthrSAb8QTQLiWrm69U_mRSrK5XWk3VDAmIkdWWSfHK1YJedP8VXYH8F_o7tC76Z6GhM-lqlTZeOcermxJ"/>
+<div class="p-stack-md">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-2 block">Remote Work</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-primary">Office upgrades for the remote neighbor</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Simple ergonomic changes and lighting tips that will transform your spare bedroom into a productivity hub.</p>
+</div>
+</article>
+</div>
+<div class="mt-stack-lg flex justify-center">
+<button class="border-2 border-secondary text-secondary px-stack-lg py-3 rounded-lg font-bold hover:bg-secondary/5 transition-all">
+                            Load More Articles
+                        </button>
+</div>
+</section>
+</div>
+<!-- Sidebar Column -->
+<aside class="hidden lg:block space-y-stack-lg">
+<!-- SideNavBar (Customized shared component) -->
+<nav class="bg-surface p-stack-md rounded-xl border border-outline-variant space-y-stack-md shadow-sm">
+<div>
+<span class="font-label-caps text-label-caps text-outline uppercase">Recommended</span>
+<p class="font-body-md text-body-md font-bold text-primary">Curated for you</p>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-stack-md p-stack-sm text-primary font-bold bg-secondary-container rounded-lg transition-transform hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-body-md text-body-md">Trending</span>
+</a>
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-transform hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="font-body-md text-body-md">Top Reviews</span>
+</a>
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-transform hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">local_offer</span>
+<span class="font-body-md text-body-md">Deals of the Week</span>
+</a>
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-transform hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">memory</span>
+<span class="font-body-md text-body-md">Tech Specs</span>
+</a>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold hover:opacity-90 transition-opacity">
+                        Join Newsletter
+                    </button>
+</nav>
+<!-- Skyscraper Ad Zone -->
+<div class="ad-zone w-full h-[600px] flex items-center justify-center rounded-lg overflow-hidden">
+<span class="text-outline text-label-caps">Skyscraper Ad (300x600)</span>
+</div>
+<!-- Newsletter Widget -->
+<div class="bg-secondary-fixed text-on-secondary-fixed p-stack-lg rounded-xl border border-secondary shadow-sm">
+<h4 class="font-headline-sm text-headline-sm mb-stack-sm">Simple Tech Tips</h4>
+<p class="font-body-md text-body-md mb-stack-md">Get one practical tech tip in your inbox every Tuesday morning. No jargon, just help.</p>
+<input class="w-full rounded-lg border-secondary-container mb-stack-sm focus:ring-secondary" placeholder="neighbor@example.com" type="email"/>
+<button class="w-full bg-secondary text-on-secondary py-2 rounded-lg font-bold hover:opacity-90">
+                        Subscribe Now
+                    </button>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-section-gap bg-primary text-on-primary py-stack-lg px-gutter flex flex-col items-center gap-stack-md text-center">
+<div class="max-w-container-max mx-auto w-full">
+<div class="flex flex-col items-center gap-stack-md">
+<span class="font-headline-md text-headline-md text-on-primary font-extrabold">Domigadget</span>
+<nav class="flex flex-wrap justify-center gap-stack-lg">
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-opacity" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-opacity" href="#">Contact</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-opacity" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-opacity" href="#">Terms of Service</a>
+</nav>
+<div class="h-px w-24 bg-on-primary-container opacity-30 my-stack-sm"></div>
+<p class="font-body-md text-body-md opacity-80">
+                    © 2024 Domigadget. Tech advice for the knowledgeable neighbor.
+                </p>
+<div class="flex gap-stack-md mt-stack-md">
+<a class="material-symbols-outlined text-on-primary opacity-60 hover:opacity-100" href="#">rss_feed</a>
+<a class="material-symbols-outlined text-on-primary opacity-60 hover:opacity-100" href="#">mail</a>
+<a class="material-symbols-outlined text-on-primary opacity-60 hover:opacity-100" href="#">share</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for ad hover effect or newsletter focus
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('ring-2', 'ring-secondary-container');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('ring-2', 'ring-secondary-container');
+            });
+        });
+    </script>
+</body></html>
