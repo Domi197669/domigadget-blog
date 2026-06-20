@@ -1,0 +1,27 @@
+{
+  "name": "Domigadget - Consejos Tecnológicos",
+  "short_name": "Domigadget",
+  "description": "Consejos tecnológicos prácticos y sencillos para el vecino experto.",
+  "start_url": "/domigadget-blog/",
+  "scope": "/domigadget-blog/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f9fb",
+  "theme_color": "#00236f",
+  "icons": [
+    {
+      "src": "/domigadget-blog/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/domigadget-blog/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["technology", "lifestyle"],
+  "lang": "es"
+}

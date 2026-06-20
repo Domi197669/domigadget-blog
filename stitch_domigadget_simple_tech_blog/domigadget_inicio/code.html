@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Domigadget | Tech Advice for the Knowledgeable Neighbor</title>
+<meta content="#00236f" name="theme-color"/>
+<link href="../../manifest.json" rel="manifest"/>
 <link href="../../dist/output.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -209,7 +211,7 @@
 </nav>
 <div class="h-px w-24 bg-on-primary-container opacity-30 my-stack-sm"></div>
 <p class="font-body-md text-body-md opacity-80">
-                    © 2024 Domigadget. Tech advice for the knowledgeable neighbor.
+                    © 2026 Domigadget. Tech advice for the knowledgeable neighbor.
                 </p>
 <div class="flex gap-stack-md mt-stack-md">
 <a class="material-symbols-outlined text-on-primary opacity-60 hover:opacity-100" href="#">rss_feed</a>
@@ -230,4 +232,9 @@
             });
         });
     </script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('../../sw.js');
+    }
+</script>
 </body></html>

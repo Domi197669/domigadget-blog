@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Domigadget | Consejos Tecnológicos para el Vecino Experto</title>
+<meta content="#00236f" name="theme-color"/>
+<link href="manifest.json" rel="manifest"/>
 <link href="dist/output.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -71,7 +73,7 @@
 <div class="flex justify-end mb-4">
 <span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold">
 <span class="material-symbols-outlined text-sm mr-1">history</span>
-            Última actualización: Noviembre 2024
+            Última actualización: Junio 2026
         </span>
 </div>
 <div class="lg:grid lg:grid-cols-[1fr_300px] gap-gutter">
@@ -223,7 +225,7 @@
 </nav>
 <div class="h-px w-24 bg-on-primary-container opacity-30 my-stack-sm"></div>
 <p class="font-body-md text-body-md opacity-80">
-                © 2024 Domigadget. Consejos tecnológicos para el vecino experto.
+                © 2026 Domigadget. Consejos tecnológicos para el vecino experto.
             </p>
 <div class="flex gap-stack-md mt-stack-md">
 <a class="material-symbols-outlined text-on-primary opacity-60 hover:opacity-100" href="#">rss_feed</a>
@@ -242,5 +244,10 @@
             input.classList.remove('ring-2', 'ring-secondary-container');
         });
     });
+</script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+    }
 </script>
 </body></html>
