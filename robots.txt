@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://domi197669.github.io/domigadget-blog/sitemap.xml

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://domi197669.github.io/domigadget-blog/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://domi197669.github.io/domigadget-blog/about.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://domi197669.github.io/domigadget-blog/contact.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://domi197669.github.io/domigadget-blog/privacy.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://domi197669.github.io/domigadget-blog/terms.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://domi197669.github.io/domigadget-blog/stitch_domigadget_simple_tech_blog/domigadget_inicio/code.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://domi197669.github.io/domigadget-blog/stitch_domigadget_simple_tech_blog/domigadget_inicio_espa_ol/code.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://domi197669.github.io/domigadget-blog/stitch_domigadget_simple_tech_blog/domigadget_actualizado_mensualmente/code.html</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
