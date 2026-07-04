@@ -62,7 +62,7 @@
     var ins = document.createElement('ins');
     ins.className = 'adsbygoogle';
     ins.style.display = 'block';
-    ins.setAttribute('data-ad-client', AD_CONFIG.adMob.appId);
+    ins.setAttribute('data-ad-client', AD_CONFIG.publisherId);
     ins.setAttribute('data-ad-slot', AD_CONFIG.adMob.adUnitId);
     ins.setAttribute('data-ad-format', 'auto');
     ins.setAttribute('data-full-width-responsive', 'true');
@@ -72,12 +72,16 @@
     } catch (e) {}
   }
 
+  function imgFallback(el) {
+    el.parentElement.innerHTML = '<span class="material-symbols-outlined text-outline text-5xl">devices</span>';
+  }
+
   function renderGadgetCard(gadget) {
     var discount = getDiscountPercent(gadget.originalPrice, gadget.price);
     return [
       '<div class="gadget-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col">',
       '<div class="relative aspect-video bg-surface-dim flex items-center justify-center overflow-hidden">',
-      '<img src="' + gadget.image + '" alt="' + gadget.name + '" class="w-full h-full object-cover" loading="lazy" onerror="this.parentElement.innerHTML=\'<span class=\\\\\'material-symbols-outlined text-outline text-5xl\\\\\'>devices</span>\'">',
+      '<img src="' + gadget.image + '" alt="' + gadget.name + '" class="w-full h-full object-cover" loading="lazy" onerror="imgFallback(this)">',
       gadget.badge ? '<span class="absolute top-2 left-2 ' + gadget.badgeColor + ' text-white text-xs font-bold px-2 py-0.5 rounded-full shadow">' + gadget.badge + '</span>' : '',
       discount ? '<span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow">-' + discount + '%</span>' : '',
       '</div>',
@@ -108,7 +112,7 @@
     return [
       '<div class="featured-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden transition-all duration-300 hover:shadow-lg flex flex-col md:grid md:grid-cols-2">',
       '<div class="aspect-video md:aspect-auto bg-surface-dim overflow-hidden relative">',
-      '<img src="' + gadget.image + '" alt="' + gadget.name + '" class="w-full h-full object-cover" loading="lazy" onerror="this.parentElement.innerHTML=\'<span class=\\\\\'material-symbols-outlined text-outline text-5xl\\\\\'>devices</span>\'">',
+      '<img src="' + gadget.image + '" alt="' + gadget.name + '" class="w-full h-full object-cover" loading="lazy" onerror="imgFallback(this)">',
       gadget.badge ? '<span class="absolute top-3 left-3 ' + gadget.badgeColor + ' text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">' + gadget.badge + '</span>' : '',
       '</div>',
       '<div class="p-6 flex flex-col gap-3 justify-center">',
@@ -178,7 +182,11 @@
     document.querySelectorAll('[data-ad-native]').forEach(function (el) {
       if (AD_CONFIG.publisherId === 'ca-pub-0000000000000000') return;
       el.className = 'ad-container w-full mb-stack-lg';
-      createAdSenseAd(el, AD_CONFIG.adSlots.infeed, 'auto', true);
+      if (isPwaStandalone() && AD_CONFIG.adMob.enabled) {
+        createAdMobAd(el);
+      } else {
+        createAdSenseAd(el, AD_CONFIG.adSlots.infeed, 'auto', true);
+      }
     });
 
     var newsletterForm = document.getElementById('newsletter-form');

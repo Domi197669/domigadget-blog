@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @source "./*.html";
+@source "./js/*.js";
+@source "./data/*.js";
 
 @theme {
   --color-background: #f7f9fb;
