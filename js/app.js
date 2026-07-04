@@ -2,12 +2,14 @@
   'use strict';
 
   var AD_CONFIG = {
+    // Para AdSense (web normal): cambia publisherId por tu ID tipo ca-pub-XXXXX
     publisherId: 'ca-pub-0000000000000000',
     adSlots: {
       leaderboard: '0000000000',
       sidebar: '0000000000',
       infeed: '0000000000'
     },
+    // Para AdMob (PWA instalada): pon enabled: true y tus IDs de AdMob
     adMob: {
       enabled: false,
       appId: 'ca-app-pub-0000000000000000~0000000000',
