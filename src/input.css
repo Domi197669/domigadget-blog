@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@source "../stitch_domigadget_simple_tech_blog";
+@source "./*.html";
 
 @theme {
   --color-background: #f7f9fb;

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /node_modules/
+Disallow: /stitch_domigadget_simple_tech_blog/
 
 Sitemap: https://domi197669.github.io/domigadget-blog/sitemap.xml
