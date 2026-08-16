@@ -193,11 +193,28 @@
     if (newsletterForm) {
       newsletterForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        var email = this.querySelector('input[type="email"]');
-        if (email && email.value) {
-          alert('\u00A1Gracias por suscribirte! Te enviaremos consejos tecnol\u00F3gicos cada semana.');
-          email.value = '';
-        }
+        var status = document.getElementById('newsletter-status');
+        if (!status) return;
+        var email = newsletterForm.querySelector('input[type="email"]');
+        if (!email || !email.value) return;
+        var submitBtn = newsletterForm.querySelector('button[type="submit"]');
+        var originalLabel = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) submitBtn.textContent = 'Enviando...';
+        fetch(newsletterForm.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ email: email.value, _subject: 'Nueva suscripción al boletín de Domigadget' })
+        }).then(function (res) {
+          if (!res.ok) throw new Error('http');
+          status.textContent = '\u00A1Gracias por suscribirte! Te enviaremos consejos tecnol\u00F3gicos cada semana.';
+          status.style.color = '#166534';
+          newsletterForm.reset();
+        }).catch(function () {
+          status.textContent = 'No se pudo enviar. Escr\u00EDbenos a domicastbo@gmail.com y te apuntamos.';
+          status.style.color = '#93000a';
+        }).finally(function () {
+          if (submitBtn) submitBtn.textContent = originalLabel;
+        });
       });
     }
 

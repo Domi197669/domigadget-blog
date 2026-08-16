@@ -48,6 +48,7 @@
 <a class="text-on-surface-variant hover:text-primary transition-colors font-headline-sm text-headline-sm whitespace-nowrap" href="#recomendaciones">Guías</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-headline-sm text-headline-sm whitespace-nowrap" href="#featured-gadgets">Reseñas</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-headline-sm text-headline-sm whitespace-nowrap" href="#recomendaciones">Ofertas</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-sm text-headline-sm whitespace-nowrap" href="blog/">Blog</a>
 </nav>
 <div class="flex items-center gap-stack-md">
 <div class="hidden lg:flex items-center bg-surface-container-low px-stack-md py-2 rounded-full border border-outline-variant">
@@ -186,11 +187,15 @@ Unirse al Boletín
 <div class="bg-secondary-fixed text-on-secondary-fixed p-stack-lg rounded-xl border border-secondary shadow-sm">
 <h4 class="font-headline-sm text-headline-sm mb-stack-sm">Consejos Semanales</h4>
 <p class="font-body-md text-body-md mb-stack-md">Recibe un consejo práctico cada martes. Sin jerga, solo ayuda real.</p>
-<form id="newsletter-form">
-<input class="w-full rounded-lg border-secondary-container mb-stack-sm focus:ring-secondary p-2" placeholder="vecino@ejemplo.com" type="email" required/>
+<form id="newsletter-form" action="https://formsubmit.co/ajax/domicastbo@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Nueva suscripción al boletín de Domigadget"/>
+<input type="hidden" name="_template" value="table"/>
+<input type="hidden" name="_captcha" value="false"/>
+<input class="w-full rounded-lg border-secondary-container mb-stack-sm focus:ring-secondary p-2" placeholder="vecino@ejemplo.com" type="email" name="email" required/>
 <button class="w-full bg-secondary text-on-secondary py-2 rounded-lg font-bold hover:opacity-90" type="submit">
 Suscribirse Ahora
 </button>
+<p id="newsletter-status" class="text-xs mt-2 font-semibold" aria-live="polite"></p>
 </form>
 </div>
 </aside>
@@ -202,6 +207,7 @@ Suscribirse Ahora
 <span class="font-headline-md text-headline-md text-on-primary font-extrabold">Domigadget</span>
 <nav class="flex flex-wrap justify-center gap-stack-lg">
 <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-opacity" href="about.html">Sobre Nosotros</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-opacity" href="blog/">Blog</a>
 <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-opacity" href="contact.html">Contacto</a>
 <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-opacity" href="privacy.html">Privacidad</a>
 <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-opacity" href="terms.html">Términos</a>
